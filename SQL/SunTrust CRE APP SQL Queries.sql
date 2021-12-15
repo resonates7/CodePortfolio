@@ -41,8 +41,6 @@ inner join cdm_pd.T_ARNGE_EXPOS_OBLIG_FACT AS F
   on b.core_arnge_dim_id= f.core_arnge_dim_id and B.ARNGE_ID = f.ARNGE_ID
 inner join cdm_pd.dt_core_invlv_prty_dim AS AIP
   on f.core_invlv_prty_dim_id = aip.core_invlv_prty_dim_id
- 
--- Had problems with this join.  Diagram says to join on two keys but got NULL when I did
 left join cdm_pd.dt_core_invlv_prty_dim AS CIP
   on a.colat_core_invlv_prty_dim_id = cip.core_invlv_prty_dim_id
   --AND A.COLAT_INVLV_PRTY_ID = CIP.CORE_INVLV_PRTY_DIM_ID
@@ -70,6 +68,7 @@ with ur;
  
 /*exceptions: this query returns collateral records that are different
 actual 3Q dimid 20141111013839, 3Q dim id using compass data 20141118034843
+You can change the dimid to compare different versions of the data set
 */
  
  
